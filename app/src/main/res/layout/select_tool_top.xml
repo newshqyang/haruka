@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linearLayout_selectToolBar_top"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@android:color/white"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:padding="5sp">
+    <ImageButton
+        android:id="@+id/imageButton_cancel"
+        android:layout_width="55sp"
+        android:layout_height="30sp"
+        android:paddingStart="5sp"
+        android:paddingEnd="30sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:src="@drawable/cancel"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY" />
+    <TextView
+        android:id="@+id/text_selectSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="已选中 0 项"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+    <ImageButton
+        android:id="@+id/imageButton_selectAll"
+        android:layout_width="55sp"
+        android:layout_height="30sp"
+        android:paddingStart="30sp"
+        android:paddingEnd="5sp"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:src="@drawable/select_all"
+        android:background="@android:color/transparent"
+        android:scaleType="fitXY" />
+</LinearLayout>

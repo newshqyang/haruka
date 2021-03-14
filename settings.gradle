@@ -1,0 +1,2 @@
+include ':app', ':myandroidutility-release'
+rootProject.name='Haruka'
