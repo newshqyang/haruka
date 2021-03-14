@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Haruka</string>
+    <string name="version">v1.7</string>
+
+    <string name="editTextSearchHint">搜索文件…</string>
+    <string name="downloadMonitorActivityTitle">下载队列</string>
+    <string name="channel_name">下载进度</string>
+    <string name="channel_description">显示当前下载进度</string>
+    <string name="channel_id">HarukaNotificationChannelId</string>
+    <string name="haruka">Haruka文件管理</string>
+    <string name="explorer_none">什么也没有</string>
+    <string name="replaceSuccess">修改成功</string>
+    <string name="replaceFailure">修改失败了..</string>
+    <string name="same_name">当前目录下已存在同名文件/文件夹</string>
+    <string name="move_failure">移动失败了..</string>
+
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="error_play_video">无法播放此视频</string>
+    <string name="setting_explorer_animation">文件浏览动画</string>
+    <string name="setting_manage_collections">管理书签</string>
+    <string name="setting_show_hidden_file">显示隐藏文件</string>
+    <string name="harukaPath">/Download/Haruka</string>
+    <string name="welcome_slogan">Haruka文件管理器</string>
+</resources>

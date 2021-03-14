@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sampleName">
+        <item>相机</item>
+        <item>下载</item>
+    </string-array>
+    <string-array name="samplePath">
+        <item>/DCIM/Camera</item>
+        <item>/Download</item>
+    </string-array>
+</resources>

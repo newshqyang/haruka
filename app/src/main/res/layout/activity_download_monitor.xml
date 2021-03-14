@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context=".view.DownloadMonitorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp">
+
+        <ImageButton
+            android:id="@+id/imageButton_back"
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:padding="10sp"
+            android:scaleType="fitXY"
+            android:src="@drawable/left_arrow_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:text="@string/downloadMonitorActivityTitle"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <ImageButton
+            android:id="@+id/imageButton_history"
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:padding="15sp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/history_icon" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="什么文件也没有下载"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_downloadRanks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:divider="@null"/>
+    </RelativeLayout>
+</LinearLayout>
