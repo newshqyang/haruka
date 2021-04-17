@@ -1,6 +1,5 @@
 package com.shqyang.yexplorer.adapter;
 
-import android.view.View;
 import android.widget.CheckBox;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -14,7 +13,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class FileAdapter extends BaseQuickAdapter<File, BaseViewHolder> {
     private boolean isCheckMode = false;
 
     public FileAdapter(List<File> fileList) {
-        super(R.layout.explorer_item, fileList);
+        super(R.layout.yexplorer_item, fileList);
     }
 
     public boolean isCheckMode() {

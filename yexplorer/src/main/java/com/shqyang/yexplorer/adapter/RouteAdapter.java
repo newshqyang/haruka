@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class RouteAdapter extends BaseQuickAdapter<File, BaseViewHolder> {
     public RouteAdapter(List<File> routeList) {
-        super(R.layout.explorer_route_item, routeList);
+        super(R.layout.yexplorer_route_item, routeList);
     }
 
     @Override

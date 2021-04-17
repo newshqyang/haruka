@@ -27,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.test.TestActivity"/>
         <activity android:name=".view.explorer.ExplorerActivity"/>
         <activity android:name=".view.FtpActivity" />
         <activity

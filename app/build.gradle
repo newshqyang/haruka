@@ -66,9 +66,6 @@ dependencies {
     def koin_version = "2.2.2"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
 
-    //BaseQuickAdapter - 便捷RecyclerView适配器
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
-
 
     //module
     implementation project(':yexplorer')

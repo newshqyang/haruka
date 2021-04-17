@@ -65,7 +65,7 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mContext = getContext();
-        mRootView = inflater.inflate(R.layout.explorer_fragment, container, false);
+        mRootView = inflater.inflate(R.layout.yexplorer_fragment, container, false);
         initView();
         initEvent();
         loadData(true);
