@@ -1,5 +1,6 @@
 package com.shqyang.yexplorer.adapter;
 
+import android.view.View;
 import android.widget.CheckBox;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -83,6 +84,12 @@ public class FileAdapter extends BaseQuickAdapter<File, BaseViewHolder> {
         if (isCheckMode) {
             CheckBox cb = holder.getView(R.id.check_cb);
             cb.setChecked(mCheckedArray[getItemPosition(file)]);
+            cb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    holder.itemView.performClick();
+                }
+            });
         }
     }
 
