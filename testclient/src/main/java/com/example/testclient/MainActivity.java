@@ -27,6 +27,16 @@ public class MainActivity extends AppCompatActivity {
             public void openFile(File file) {
                 Toast.makeText(MainActivity.this, file.getName(), Toast.LENGTH_SHORT).show();
             }
+
+            @Override
+            public void enterCheckMode() {
+
+            }
+
+            @Override
+            public void checkChange(int checkSize) {
+
+            }
         });
     }
 

@@ -27,6 +27,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.main.MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".view.test.TestActivity"/>
         <activity android:name=".view.explorer.ExplorerActivity"/>
         <activity android:name=".view.FtpActivity" />
@@ -61,9 +64,6 @@
             android:name=".view.DownloadMonitorActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".view.PlayActivity" />
-        <activity
-            android:name=".view.MainActivity"
-            android:screenOrientation="portrait"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

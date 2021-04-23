@@ -111,6 +111,10 @@ public class EditDialog implements PopupMenu.OnMenuItemClickListener {
         mEditBottomDialog.show();
     }
 
+    public boolean isShowing() {
+        return mEditTopDialog.isShowing();
+    }
+
     public void dismiss() {
         if (!mEditTopDialog.isShowing()) {
             return;

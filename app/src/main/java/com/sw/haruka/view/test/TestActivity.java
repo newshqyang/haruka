@@ -22,12 +22,6 @@ public class TestActivity extends AppCompatActivity {
         String rootPath = Environment.getExternalStorageDirectory().getAbsolutePath();
         frag = new ExplorerFragment(rootPath);
         getSupportFragmentManager().beginTransaction().add(R.id.container_ll, frag).commit();
-        frag.setClickAction(new ExplorerFragment.FileClickAction() {
-            @Override
-            public void openFile(File file) {
-                Toast.makeText(TestActivity.this, file.getName(), Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     @Override

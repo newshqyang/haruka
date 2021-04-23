@@ -8,7 +8,7 @@ import com.sw.haruka.helper.utils.AppUtils
 import com.sw.haruka.helper.utils.ImageUtil
 import com.sw.haruka.helper.utils.LogMgr
 import com.sw.haruka.helper.utils.PermissionUtils
-import com.sw.haruka.view.MainActivity
+import com.sw.haruka.view.main.MainActivity
 import com.sw.haruka.view.base.BaseActivity
 import com.sw.haruka.view.explorer.ExplorerActivity
 import com.sw.haruka.view.welcome.viewmodel.WelcomeViewModel

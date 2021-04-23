@@ -39,6 +39,7 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
     private Context mContext;
 
     private View mRootView;
+    private LinearLayoutManager mExplorerMgr;
     private RecyclerView mRouteRv;
     private RecyclerView mExplorerRv;
     private TextView mEmptyTv;
@@ -50,6 +51,7 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
     private List<File> mFileList;
     private String mRootPath;
     private Stack<File> mRecentList;
+    private Stack<Integer> mRecentPositionStack;
 
     private boolean mHasPermission = false;
 
@@ -70,6 +72,13 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
         initEvent();
         loadData(true);
         return mRootView;
+    }
+
+    /**
+     * check all files
+     */
+    public void checkAll() {
+        mFileAdapter.checkAll();
     }
 
     /**
@@ -147,14 +156,23 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
         mRouteRv = mRootView.findViewById(R.id.route_rv);
         mRouteRv.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
         mRecentList = new Stack<>();
+        mRecentPositionStack = new Stack<>();
         mRouteAdapter = new RouteAdapter(mRecentList);
         mRouteRv.setAdapter(mRouteAdapter);
         mExplorerRv = mRootView.findViewById(R.id.explorer_rv);
-        mExplorerRv.setLayoutManager(new LinearLayoutManager(mContext));
+        mExplorerMgr = new LinearLayoutManager(mContext);
+        mExplorerRv.setLayoutManager(mExplorerMgr);
         mFileList = new ArrayList<>();
         mFileAdapter = new FileAdapter(mFileList);
         mExplorerRv.setAdapter(mFileAdapter);
         mEmptyTv = mRootView.findViewById(R.id.notice_tv);
+    }
+
+    /**
+     * cancel check mode
+     */
+    public void cancelCheckMode() {
+        mFileAdapter.setCheckMode(false);
     }
 
     @Override
@@ -170,6 +188,7 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
                 File file = mRecentList.get(position);
                 refreshRoute();
                 refreshExplorer(file);
+                scrollToPosition();
             }
         });
         mFileAdapter.setOnItemClickListener(new OnItemClickListener() {
@@ -177,6 +196,7 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
             public void onItemClick(@NonNull BaseQuickAdapter<?, ?> adapter, @NonNull View view, int position) {
                 if (mFileAdapter.isCheckMode()) {
                     mFileAdapter.check(position);
+                    mClickAction.checkChange(mFileAdapter.getCheckedSize());
                     List<File> cfl = getCheckedFileList();
                     Log.i(TAG, "onItemClick: " + cfl.size());
                     for (File f : cfl) {
@@ -187,6 +207,8 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
                 File file = mFileList.get(position);
                 if (file.isDirectory()) {
                     mRecentList.push(file);
+                    mRecentPositionStack.push(mExplorerMgr.findFirstVisibleItemPosition());
+                    Log.i(TAG, "onItemClick: position stack push " + mExplorerMgr.findFirstVisibleItemPosition());
                     refreshRoute();
                     refreshExplorer(file);
                 } else {
@@ -197,10 +219,32 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
         mFileAdapter.setOnItemLongClickListener(new OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(@NonNull BaseQuickAdapter adapter, @NonNull View view, int position) {
+                mClickAction.enterCheckMode();
+                mClickAction.checkChange(1);
                 mFileAdapter.setCheckMode(true, position);
                 return false;
             }
         });
+    }
+
+    /**
+     * get size of checked files
+     * @return
+     */
+    public int getCheckedSize() {
+        return mFileAdapter.getCheckedSize();
+    }
+
+    /**
+     * explorer scroll to position
+     */
+    private void scrollToPosition() {
+        if (mRecentPositionStack.isEmpty()) {
+            return;
+        }
+        Integer position = mRecentPositionStack.pop();
+        mExplorerMgr.scrollToPositionWithOffset(position, 0);
+        Log.i(TAG, "scrollToPosition: " + position);
     }
 
 
@@ -239,6 +283,7 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
         refreshRoute();
         File file = mRecentList.get(mRecentList.size() - 1);
         refreshExplorer(file);
+        scrollToPosition();
         return true;
     }
 
@@ -253,5 +298,7 @@ public class ExplorerFragment extends Fragment implements FragmentStatus {
 
     public interface FileClickAction {
         void openFile(File file);
+        void enterCheckMode();
+        void checkChange(int checkSize);
     }
 }

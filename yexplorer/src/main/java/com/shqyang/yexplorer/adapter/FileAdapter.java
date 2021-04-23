@@ -2,6 +2,7 @@ package com.shqyang.yexplorer.adapter;
 
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
@@ -45,6 +46,28 @@ public class FileAdapter extends BaseQuickAdapter<File, BaseViewHolder> {
     }
 
     /**
+     * check all
+     */
+    public void checkAll() {
+        Arrays.fill(mCheckedArray, !mCheckedArray[0]);
+        this.notifyDataSetChanged();
+    }
+
+    /**
+     * get size of checked files
+     * @return
+     */
+    public int getCheckedSize() {
+        int checkedSize = 0;
+        for (boolean isChecked : mCheckedArray) {
+            if (isChecked) {
+                checkedSize++;
+            }
+        }
+        return checkedSize;
+    }
+
+    /**
      * set check mode
      * @param isCheckMode set adapter's mode to check if true
      * @param checkedItem checked item position firstly when set check mode
@@ -72,7 +95,7 @@ public class FileAdapter extends BaseQuickAdapter<File, BaseViewHolder> {
 
     public void check(int position) {
         mCheckedArray[position] = !mCheckedArray[position];
-        this.notifyDataSetChanged();;
+        this.notifyDataSetChanged();
     }
 
     @Override
