@@ -8,6 +8,9 @@
         android:id="@+id/main_more_aboutMe"
         android:title="关于" />
     <item
+        android:id="@+id/main_more_test"
+        android:title="测试" />
+    <item
         android:id="@+id/main_more_setting"
         android:title="设置" />
 </menu>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorSearchBackground">#F0F0F0</color>
+    <color name="colorSize">#D81B60</color>
+    <color name="colorDateFont">#999999</color>
+    <color name="colorRightArrow">#7F7F7F</color>
+    <color name="colorGray">#CDCDCD</color>
+    <color name="colorLightGray">#EEEEEE</color>
+    <color name="colorProcess">#6ABB9E</color>
+    <color name="colorDarkGray">#686868</color>
+
+    <color name="colorGreen">#00FF00</color>
+    <color name="recyclerView_background">#FFFFFF</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="themeColorYellow">#FFCC66</color>
+    <color name="harukaColor">#BA3E3D5D</color>
+
+    <color name="noPermissionText">@android:color/darker_gray</color>
+</resources>

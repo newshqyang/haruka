@@ -14,7 +14,7 @@ class ExplorerActivity : BaseActivity<ExplorerActBinding>() {
     private val mViewModel by viewModel<ExplorerViewModel>()
 
     private val mAdapter by lazy {
-        SingleTypeAdapter(mContext, R.layout.explorer_item, mViewModel.files)
+        SingleTypeAdapter(mContext, R.layout.yexplorer_item, mViewModel.files)
     }
 
     override fun initView() {

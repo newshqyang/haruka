@@ -34,6 +34,7 @@ import com.sw.haruka.helper.utils.HarukaHandlerConstant;
 import com.sw.haruka.helper.utils.NetUtils;
 import com.sw.haruka.helper.utils.StringUtil;
 import com.sw.haruka.helper.utils.ToastUtils;
+import com.sw.haruka.view.test.TestActivity;
 import com.yzq.zxinglibrary.android.CaptureActivity;
 import com.yzq.zxinglibrary.common.Constant;
 
@@ -237,6 +238,10 @@ public class MainActivity extends BaseStatusActivity implements View.OnClickList
                         case R.id.main_more_ftp:
                             startActivity(new Intent(MainActivity.this, FtpActivity.class));
                             break;
+                        case R.id.main_more_test:
+                            startActivity(new Intent(MainActivity.this, TestActivity.class));
+                            break;
+                        default:
                     }
                     return false;
                 }

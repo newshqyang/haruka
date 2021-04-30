@@ -65,4 +65,8 @@ dependencies {
     //koin - 依赖注入
     def koin_version = "2.2.2"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+
+    //module
+    implementation project(':yexplorer')
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="rootPathError">根路径错误导致无法加载列表</string>
+    <string name="noPermission">没有权限</string>
+    <string name="empty">什么也没有</string>
+    <string name="explorer_route"><![CDATA[>]]></string>
+
+</resources>
